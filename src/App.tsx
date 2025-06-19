@@ -24,7 +24,7 @@ const initialFolders: folderProps[] = [
 function App() {
   const [folders, setFolders] = useState<folderProps[]>(initialFolders);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [activeFolders, setActiveFolders] = useState<number[]>([]);
+  const [activeFolders, setActiveFolders] = useState<number[]>(initialFolders.map(folder => folder.id));
   const setFolderToFront = (folder: folderProps) => {
     setFolders(prevFolders => {
       const updatedFolders = prevFolders.filter(f => f.id !== folder.id);
