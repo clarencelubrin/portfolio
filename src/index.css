@@ -1,0 +1,50 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  color: #000;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Small: Mobile (up to 599px) */
+@media (max-width: 599px) {
+  .folder {
+    width: 312px; /* 600px - 899px */
+    /* background: lightblue; */
+  }
+}
+
+/* Medium: Tablet (600px to 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+  .folder {
+    width: 480px; /* 600px - 899px */
+    /* background: lightgreen; */
+  }
+}
+
+/* Large: Desktop (900px to 1199px) */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .folder {
+    width: 512px; /* 900px - 1199px */
+    /* background: lightyellow; */
+  }
+}
+
+/* Extra Large: TV / 4K screens (1200px and up) */
+@media (min-width: 1200px) {
+  .folder {
+    width: 512px; /* 1200px and up */
+    /* background: lightcoral; */
+  }
+}
+
