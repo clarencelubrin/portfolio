@@ -8,6 +8,12 @@ import amis1 from './assets/amis-1.png'
 import amis2 from './assets/amis-2.png'
 import amis3 from './assets/amis-3.png'
 import baybayin from './assets/baybayin.png'
+import talahanayan1 from './assets/talahanayan-1.png'
+import talahanayan2 from './assets/talahanayan-2.png'
+import talahanayan3 from './assets/talahanayan-3.png'
+import libralog1 from './assets/libralog-1.png'
+import libralog2 from './assets/libralog-2.png'
+import libralog3 from './assets/libralog-3.png'
 import './App.css'
 
 type folderProps = {
@@ -19,7 +25,9 @@ type folderProps = {
 const initialFolders: folderProps[] = [
   { id: 1, title: 'brutalista filipina', image: [brutalista2, brutalista1] },
   { id: 2, title: 'uplb amis redesign', image: [amis3, amis2, amis1] },
-  { id: 3, title: 'baybay.in', image: [baybayin] }
+  { id: 3, title: 'baybay.in', image: [baybayin] },
+  { id: 4, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1] },
+  { id: 5, title: 'libralog', image: [libralog3, libralog2, libralog1] }
 ];
 function App() {
   const [folders, setFolders] = useState<folderProps[]>(initialFolders);
@@ -55,7 +63,7 @@ function App() {
   }, [folders]);
 
   if (!imagesLoaded) {
-    return <div>Loading images...</div>;
+    return <div style={{padding: '16px'}}>Loading images...</div>;
   }
   return (
     <div style={{overflow: 'hidden', position: 'relative', width: '100vw', height: '100vh'}}>
@@ -63,7 +71,6 @@ function App() {
         <NoteHeader title="clarence.lubrin" />
         <NoteItem text="I like to create programs that are" />
         <NoteItem text="useful and beautiful." />
-        <NoteButton text="View source code" onClick={() => window.open("https://github.com/your-repo", "_blank")} />
       </Note>
       <Note style={{ position: 'absolute', bottom: 16, right: 8, zIndex: 10 }}>
         <NoteHeader title="portfolio" />

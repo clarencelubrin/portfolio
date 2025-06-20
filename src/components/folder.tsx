@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../css/folder.css';
+
 type positionType = {
     x: number;
     y: number;
