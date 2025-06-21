@@ -7,10 +7,11 @@ type positionType = {
     y: number;
 };
 type folderProps = {
-    id: number;
-    title: string;
-    image: string[];
-};
+  id: number;
+  title: string;
+  image: string[];
+  route: string;
+}
 const padding_x = window.innerWidth/4; // Padding to ensure the folder doesn't go off-screen
 const padding_y = window.innerHeight/4; // Padding to ensure the folder doesn't go off-screen
 const randomizePosition = () => {
@@ -26,11 +27,12 @@ const imagePositions: Record<number, { x: number; y: number }[]> = {
 };
 
 export function Folder({ 
-    id, title, image, setFolderToFront, activeFolders
+    id, title, image, route, setFolderToFront, activeFolders
 }: { 
     id: number;
     title: string; 
     image: string[];
+    route: string;
     setFolderToFront: (folder: folderProps) => void;
     activeFolders: number[];
 }) {
@@ -43,7 +45,7 @@ export function Folder({
     const handleMouseDown = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         if (!activeFolders.includes(id)) return;
-        setFolderToFront({ id, title, image });
+        setFolderToFront({ id, title, image, route }); // Assuming route is not used here, you can adjust as needed
         setIsClicked(true);
         pos.current.pos3 = event.clientX;
         pos.current.pos4 = event.clientY;
@@ -73,7 +75,7 @@ export function Folder({
     const handleTouchStart = (event: React.TouchEvent<HTMLButtonElement>) => {
         if (event.touches.length !== 1) return;
         if (!activeFolders.includes(id)) return;
-        setFolderToFront({ id, title, image });
+        setFolderToFront({ id, title, image, route });
         setIsClicked(true);
         if(!isHovered) setIsHovered(true); // for mobile
 

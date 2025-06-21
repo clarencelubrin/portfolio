@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Folder } from './components/folder'
-import { Note, NoteHeader, NoteItem, NoteButton } from './components/note'
+import { Note, NoteHeader, NoteItem, NoteButton, NoteRow } from './components/note'
 
 import brutalista1 from './assets/brutalista-1.png'
 import brutalista2 from './assets/brutalista-2.png'
@@ -20,14 +20,15 @@ type folderProps = {
   id: number;
   title: string;
   image: string[];
+  route: string;
 }
 
 const initialFolders: folderProps[] = [
-  { id: 1, title: 'brutalista filipina', image: [brutalista2, brutalista1] },
-  { id: 2, title: 'uplb amis redesign', image: [amis3, amis2, amis1] },
-  { id: 3, title: 'baybay.in', image: [baybayin] },
-  { id: 4, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1] },
-  { id: 5, title: 'libralog', image: [libralog3, libralog2, libralog1] }
+  { id: 1, title: 'brutalista filipina', image: [brutalista2, brutalista1], route: '/brutalista' },
+  { id: 2, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/amis' },
+  { id: 3, title: 'baybay.in', image: [baybayin], route: '/baybayin' },
+  { id: 4, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: '/talahanayan' },
+  { id: 5, title: 'libralog', image: [libralog3, libralog2, libralog1], route: '/libralog' }
 ];
 function App() {
   const [folders, setFolders] = useState<folderProps[]>(initialFolders);
@@ -72,7 +73,7 @@ function App() {
         <NoteItem text="I like to create programs that are" />
         <NoteItem text="useful and beautiful." />
       </Note>
-      <Note style={{ position: 'absolute', bottom: 16, right: 8, zIndex: 10 }}>
+      <Note style={{ position: 'absolute', bottom: 16, left: 8, zIndex: 10 }}>
         <NoteHeader title="portfolio" />
         {initialFolders.map((folder) => (
           <NoteButton 
@@ -93,6 +94,7 @@ function App() {
             id={folder.id}
             title={folder.title}
             image={folder.image}
+            route={folder.route}
             setFolderToFront={setFolderToFront}
             activeFolders={activeFolders}
           />

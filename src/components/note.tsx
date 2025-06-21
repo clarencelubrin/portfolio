@@ -27,7 +27,13 @@ export function NoteItem({text, style}: {text: string; style?: React.CSSProperti
         </div>
     );
 }
-
+export function NoteRow({children, style}: {children: React.ReactNode; style?: React.CSSProperties}) {
+    return (
+        <div className="note-item" style={style}>
+            {children}
+        </div>
+    );
+}
 export function NoteLink({text, href, style}: {text: string; href: string; style?: React.CSSProperties}) {
     return (
         <div className="note-link" style={style}>
