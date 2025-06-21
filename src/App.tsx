@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Folder } from './components/folder'
-import { Note, NoteHeader, NoteItem, NoteButton, NoteRow } from './components/note'
+import { Note, NoteHeader, NoteItem, NoteButton } from './components/note'
 
 import brutalista1 from './assets/brutalista-1.png'
 import brutalista2 from './assets/brutalista-2.png'
