@@ -14,7 +14,6 @@ import talahanayan3 from './assets/talahanayan-3.png'
 import libralog1 from './assets/libralog-1.png'
 import libralog2 from './assets/libralog-2.png'
 import libralog3 from './assets/libralog-3.png'
-import { useNavigate } from 'react-router'
 
 type folderProps = {
   id: number;
