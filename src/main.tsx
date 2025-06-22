@@ -8,12 +8,12 @@ import App from './App.tsx'
 import { PortfolioAmis } from './page/portfolio-amis.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
-    <StrictMode>
+  <StrictMode>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/portfolio/amis' element={<PortfolioAmis />} />        
+        <Route path='/portfolio/amis' element={<PortfolioAmis />} />
       </Routes>
-    </StrictMode>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </StrictMode>
 )
