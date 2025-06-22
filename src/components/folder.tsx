@@ -27,16 +27,19 @@ const imagePositions: Record<number, { x: number; y: number }[]> = {
 };
 
 export function Folder({ 
-    id, title, image, route, setFolderToFront, activeFolders
+    id, title, image, route, setFolderToFront=()=>{}, activeFolders=[id], initialPosition=null
 }: { 
     id: number;
     title: string; 
     image: string[];
     route: string;
-    setFolderToFront: (folder: folderProps) => void;
-    activeFolders: number[];
+    setFolderToFront?: (folder: folderProps) => void;
+    activeFolders?: number[];
+    isPositionRandom?: boolean;
+    initialPosition?: positionType | null;
 }) {
-    const [position, setPosition] = useState<positionType>(randomizePosition());
+    const initPosition: positionType = (initialPosition) ? initialPosition as positionType : randomizePosition();
+    const [position, setPosition] = useState<positionType>(initPosition);
     const [isHovered, setIsHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const folderRef = useRef<HTMLButtonElement | null>(null);
@@ -95,7 +98,7 @@ export function Folder({
         pos.current.pos3 = touch.clientX;
         pos.current.pos4 = touch.clientY;
         setPosition(prev => ({
-            x: Math.max(0, Math.min(window.innerWidth - 200, prev.x - pos.current.pos1)),
+            x: Math.max(0, Math.min(window.innerWidth - 500, prev.x - pos.current.pos1)),
             y: Math.max(0, Math.min(window.innerHeight - 200, prev.y - pos.current.pos2)),
         }));
     };
@@ -149,6 +152,7 @@ export function Folder({
                             position: 'absolute',
                             width: 'calc(100% - 32px)',
                             filter: isHovered ? 'none' : 'blur(2px)',
+                            // background: isClicked ? 'rgba(217, 120, 51, 0.25)' : '',
                             boxShadow: isClicked ? '0px 0px 16px 0px rgba(0, 0, 0, 0.25)' : 'none',
                             transition: 'filter 0.3s ease-in-out, box-shadow 0.5s ease-in-out',
                         }}

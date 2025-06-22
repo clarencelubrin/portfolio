@@ -1,0 +1,14 @@
+/* Background color classes */
+.--bg-color-100 { background-color: #FAFAFA; }
+.--bg-color-75 { background-color: #F2F2F2; }
+.--bg-color-50 { background-color: #CCCCCC; }
+.--bg-color-25 { background-color: #B3B3B3; }
+.--bg-color-0 { background-color: #999999; }
+
+/* Text color classes */
+.--text-default { color: #1A1A1A; }
+.--text-muted-100 { color: #404040; }
+.--text-muted-50 { color: #4D4D4D; }
+.--text-muted-0 { color: #999999; }
+
+.--text-white { color: #FFFFFF; }

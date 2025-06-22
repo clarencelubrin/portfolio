@@ -24,7 +24,7 @@
   /* Style */
   border-radius: 16px 16px 0px 0px;
   border: 1px solid hwb(25 20% 15% / 0.25);
-  background: hwb(25 20% 15% / 0.25);
+  background: rgba(217, 120, 51, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }

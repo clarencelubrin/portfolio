@@ -26,6 +26,9 @@
     border-bottom: rgb(70, 70, 175) 1px solid;
     text-decoration: none;
 }
+.note-link:hover{
+    text-decoration: underline;
+}
 
 .note-link:last-child{
     border-bottom: none;

@@ -1,20 +1,38 @@
+@import "tailwindcss";
+
 body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 :root {
+  --font-weight-semibold: 600;
+
+  /* Color */
+  --bg-color-100: #FAFAFA;
+  --bg-color-75: #F2F2F2;
+  --bg-color-50: #CCCCCC;
+  --bg-color-25: #B3B3B3;
+  --bg-color-0: #999999;
+
+  --text-color-default: #1A1A1A;
+  --text-color-muted-100: #404040;
+  --text-color-muted-50: #4D4D4D;
+  --text-color-muted-0: #999999;
+
   font-family: "IBM Plex Mono";
   font-size: 16px;
-  color: #000;
-  line-height: 1.5;
-  font-weight: 400;
-
+  color: var(--text-color-default);
+  background-color: var(--bg-color-100);
+  overflow-x: hidden;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  height: auto;
 }
+
 
 /* Small: Mobile (up to 599px) */
 @media (max-width: 599px) {
@@ -48,3 +66,75 @@ body{
   }
 }
 
+
+
+/* Typography */
+h1 {
+  font-size: 2.986rem;
+  line-height: 110%;
+  letter-spacing: -2%;
+  font-weight: var(--font-weight-semibold);
+  max-width: 600px;
+}
+h2 {
+  font-size: 2.488rem;
+  line-height: 110%;
+  letter-spacing: -1%;
+  font-weight: var(--font-weight-semibold);
+  max-width: 600px;
+}
+h3 {
+  font-size: 2.074rem;
+  line-height: 110%;
+  letter-spacing: -1%;
+  font-weight: var(--font-weight-semibold);
+  max-width: 600px;
+}
+h4 {
+  font-size: 1.728rem;
+  line-height: 110%;
+  letter-spacing: -1%;
+  font-weight: var(--font-weight-semibold);
+  max-width: 600px;
+}
+h5 {
+  font-size: 1.44rem;
+  line-height: 115%;
+  letter-spacing: -1%;
+  font-weight: var(--font-weight-semibold);
+  max-width: 600px;
+}
+h6 {
+  font-size: 1.2rem;
+  line-height: 115%;
+  letter-spacing: -1%;
+  font-weight: var(--font-weight-semibold);
+  max-width: 600px;
+}
+p {
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 1%;
+  font-weight: 400;
+  max-width: 600px;
+}
+
+.p-small {
+  font-size: 0.833rem;
+  line-height: 150%;
+  letter-spacing: 2%;
+  font-weight: 400;
+  max-width: 600px;
+}
+
+button {
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 2%;
+  font-weight: 700;
+  /* max-width: 600px; */
+}
+
+/* .p-xsmall {
+  font-size: 0.694rem;
+} */

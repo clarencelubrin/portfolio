@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Folder } from './components/folder'
-import { Note, NoteHeader, NoteItem, NoteButton } from './components/note'
+import { Note, NoteHeader, NoteItem, NoteLink } from './components/note'
 
 import brutalista1 from './assets/brutalista-1.png'
 import brutalista2 from './assets/brutalista-2.png'
@@ -14,7 +14,7 @@ import talahanayan3 from './assets/talahanayan-3.png'
 import libralog1 from './assets/libralog-1.png'
 import libralog2 from './assets/libralog-2.png'
 import libralog3 from './assets/libralog-3.png'
-import './App.css'
+import { useNavigate } from 'react-router'
 
 type folderProps = {
   id: number;
@@ -24,11 +24,11 @@ type folderProps = {
 }
 
 const initialFolders: folderProps[] = [
-  { id: 1, title: 'brutalista filipina', image: [brutalista2, brutalista1], route: '/brutalista' },
-  { id: 2, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/amis' },
-  { id: 3, title: 'baybay.in', image: [baybayin], route: '/baybayin' },
-  { id: 4, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: '/talahanayan' },
-  { id: 5, title: 'libralog', image: [libralog3, libralog2, libralog1], route: '/libralog' }
+  { id: 1, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/portfolio/amis' },
+  { id: 2, title: 'baybay.in', image: [baybayin], route: 'https://github.com/clarencelubrin/baybayin-script-recognition' },
+  { id: 3, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: 'https://talahanayan.vercel.app/' },
+  { id: 4, title: 'libralog', image: [libralog3, libralog2, libralog1], route: 'https://github.com/puniyawa/libralog' },
+  { id: 5, title: 'brutalista filipina', image: [brutalista2, brutalista1], route: '/' },
 ];
 function App() {
   const [folders, setFolders] = useState<folderProps[]>(initialFolders);
@@ -64,25 +64,22 @@ function App() {
   }, [folders]);
 
   if (!imagesLoaded) {
-    return <div style={{padding: '16px'}}>Loading images...</div>;
+    return <div className='p-[16px]'>Loading images...</div>;
   }
   return (
-    <div style={{overflow: 'hidden', position: 'relative', width: '100vw', height: '100vh'}}>
-      <Note style={{ position: 'absolute', top: 8, left: 8, zIndex: 10 }}>
+    <div className='overflow-hidden relative h-screen w-screen'>
+      <Note className='absolute top-[8px] left-[8px] z-10'>
         <NoteHeader title="clarence.lubrin" />
         <NoteItem text="I like to create programs that are" />
         <NoteItem text="useful and beautiful." />
       </Note>
-      <Note style={{ position: 'absolute', bottom: 16, left: 8, zIndex: 10 }}>
+      <Note className='absolute bottom-[16px] left-[8px] z-10'>
         <NoteHeader title="portfolio" />
         {initialFolders.map((folder) => (
-          <NoteButton 
+          <NoteLink 
             key={folder.id}
             text={folder.title}
-            onClick={() => {
-              setFolderToFront(folder);
-              setActiveFolders([folder.id])
-            }}
+            route={folder.route}
             onMouseEnter={() => setActiveFolders([folder.id])}
             onMouseLeave={() => {if(folders[folders.length-1] !== folder) setActiveFolders(initialFolders.map(folder => folder.id)) }}
           />

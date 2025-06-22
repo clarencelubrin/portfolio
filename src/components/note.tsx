@@ -1,8 +1,9 @@
 import '../css/note.css'
 import { motion } from 'framer-motion';
-export function Note({children, style}: {children: React.ReactNode; style?: React.CSSProperties}) {
+import { Link } from 'react-router';
+export function Note({children, style, className}: {children: React.ReactNode; style?: React.CSSProperties, className?: string}) {
     return (
-        <motion.div className="note" style={style}
+        <motion.div className={`note ${className}`} style={style}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -34,12 +35,19 @@ export function NoteRow({children, style}: {children: React.ReactNode; style?: R
         </div>
     );
 }
-export function NoteLink({text, href, style}: {text: string; href: string; style?: React.CSSProperties}) {
+export function NoteLink({text, route, style, onMouseEnter, onMouseLeave}: {text: string; route: string; style?: React.CSSProperties; onMouseEnter?: () => void; onMouseLeave?: () => void;}) {
+
     return (
-        <div className="note-link" style={style}>
-            <a href={href} target="_blank" rel="noopener noreferrer" className="note-link-text">
-                {text}
-            </a>
+        <div className="note-link" style={style} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            {route.startsWith('https') || route.startsWith('http') ? (
+                <a href={route} className="note-link-text" target="_blank" rel="noopener noreferrer">
+                    {text}
+                </a>
+            ) : (
+                <Link to={route} className="note-link-text">
+                    {text}
+                </Link>
+            )}
         </div>
     );
 }
