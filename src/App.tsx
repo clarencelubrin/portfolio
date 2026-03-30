@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 import { Folder } from './components/folder'
 import { Note, NoteHeader, NoteItem, NoteLink } from './components/note'
 
-import brutalista1 from './assets/brutalista-1.png'
-import brutalista2 from './assets/brutalista-2.png'
 import amis1 from './assets/amis-1.png'
 import amis2 from './assets/amis-2.png'
 import amis3 from './assets/amis-3.png'
@@ -14,6 +12,19 @@ import talahanayan3 from './assets/talahanayan-3.png'
 import libralog1 from './assets/libralog-1.png'
 import libralog2 from './assets/libralog-2.png'
 import libralog3 from './assets/libralog-3.png'
+import cer1 from './assets/cer.gif';
+import emu1 from './assets/emu1.png';
+import emu2 from './assets/emu2.png';
+import emu3 from './assets/emu3.png';
+
+const initialFolders: folderProps[] = [
+  { id: 1, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/portfolio/amis' },
+  { id: 2, title: 'baybay.in', image: [baybayin], route: 'https://github.com/clarencelubrin/baybayin-script-recognition' },
+  { id: 3, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: 'https://talahanayan.vercel.app/' },
+  { id: 4, title: 'libralog', image: [libralog3, libralog2, libralog1], route: 'https://github.com/puniyawa/libralog' },
+  { id: 5, title: 'certificate entity recognition', image: [cer1], route: 'https://github.com/clarencelubrin/certificate-entity-recognition'},
+  { id: 6, title: 'chip-8 emulator', image: [emu1, emu2, emu3], route: ''}
+];
 
 type folderProps = {
   id: number;
@@ -22,13 +33,6 @@ type folderProps = {
   route: string;
 }
 
-const initialFolders: folderProps[] = [
-  { id: 1, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/portfolio/amis' },
-  { id: 2, title: 'baybay.in', image: [baybayin], route: 'https://github.com/clarencelubrin/baybayin-script-recognition' },
-  { id: 3, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: 'https://talahanayan.vercel.app/' },
-  { id: 4, title: 'libralog', image: [libralog3, libralog2, libralog1], route: 'https://github.com/puniyawa/libralog' },
-  { id: 5, title: 'brutalista filipina', image: [brutalista2, brutalista1], route: '/' },
-];
 function App() {
   const [folders, setFolders] = useState<folderProps[]>(initialFolders);
   const [imagesLoaded, setImagesLoaded] = useState(false);
