@@ -9,21 +9,21 @@ import baybayin from './assets/baybayin.png'
 import talahanayan1 from './assets/talahanayan-1.png'
 import talahanayan2 from './assets/talahanayan-2.png'
 import talahanayan3 from './assets/talahanayan-3.png'
-import libralog1 from './assets/libralog-1.png'
-import libralog2 from './assets/libralog-2.png'
-import libralog3 from './assets/libralog-3.png'
 import cer1 from './assets/cer.gif';
 import emu1 from './assets/emu1.png';
 import emu2 from './assets/emu2.png';
 import emu3 from './assets/emu3.png';
+import farm1 from './assets/farm1.png';
+import farm2 from './assets/farm2.png';
+import farm3 from './assets/farm3.png';
 
 const initialFolders: folderProps[] = [
-  { id: 1, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/portfolio/amis' },
-  { id: 2, title: 'baybay.in', image: [baybayin], route: 'https://github.com/clarencelubrin/baybayin-script-recognition' },
-  { id: 3, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: 'https://talahanayan.vercel.app/' },
-  { id: 4, title: 'libralog', image: [libralog3, libralog2, libralog1], route: 'https://github.com/puniyawa/libralog' },
-  { id: 5, title: 'certificate entity recognition', image: [cer1], route: 'https://github.com/clarencelubrin/certificate-entity-recognition'},
-  { id: 6, title: 'chip-8 emulator', image: [emu1, emu2, emu3], route: ''}
+  { id: 1, title: 'chip-8 emulator', image: [emu3, emu2, emu1], route: ''},
+  { id: 2, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/portfolio/amis' },
+  { id: 3, title: 'baybay.in', image: [baybayin], route: 'https://github.com/clarencelubrin/baybayin-script-recognition' },
+  { id: 4, title: 'certificate entity recognition', image: [cer1], route: 'https://github.com/clarencelubrin/certificate-entity-recognition'},
+  { id: 5, title: 'talahanayan', image: [talahanayan3, talahanayan2, talahanayan1], route: 'https://talahanayan.vercel.app/' },
+  { id: 6, title: 'farm to table', image: [farm3, farm2, farm1], route: 'https://github.com/clarencelubrin/farm-to-table' }
 ];
 
 type folderProps = {
