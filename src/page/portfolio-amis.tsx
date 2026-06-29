@@ -37,7 +37,7 @@ export function PortfolioAmis() {
         }
     }, []);
     return (
-        <div>
+        <div className='bg-white h-screen w-screen'>
             <div className="border-b border-stone-300">
                 <button className='flex flex-row justify-center items-center gap-4 px-[16px] py-[12px] hover:bg-stone-200 active:bg-stone-300 w-fit'
                     onClick={() => navigate('/')}

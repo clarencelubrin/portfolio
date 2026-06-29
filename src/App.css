@@ -1,0 +1,7 @@
+.bg-screen {
+    /* Dot matrix background */
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* bg-stone-100 */
+    background-color: #f5f5f4;
+}

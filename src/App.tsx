@@ -17,8 +17,10 @@ import farm1 from './assets/farm1.png';
 import farm2 from './assets/farm2.png';
 import farm3 from './assets/farm3.png';
 
+import './App.css'
+
 const initialFolders: folderProps[] = [
-  { id: 1, title: 'chip-8 emulator', image: [emu3, emu2, emu1], route: ''},
+  { id: 1, title: 'chip-8 emulator', image: [emu3, emu2, emu1], route: 'https://github.com/clarencelubrin/chip-8'},
   { id: 2, title: 'uplb amis redesign', image: [amis3, amis2, amis1], route: '/portfolio/amis' },
   { id: 3, title: 'baybay.in', image: [baybayin], route: 'https://github.com/clarencelubrin/baybayin-script-recognition' },
   { id: 4, title: 'certificate entity recognition', image: [cer1], route: 'https://github.com/clarencelubrin/certificate-entity-recognition'},
@@ -67,11 +69,11 @@ function App() {
   }, [folders]);
 
   if (!imagesLoaded) {
-    return <div className='p-[16px]'>Loading images...</div>;
+    return <div className='p-4 ps-6 h-screen'>Loading images...</div>;
   }
   return (
     <div className='overflow-hidden relative h-screen w-screen'>
-      <Note className='absolute top-[8px] left-[8px] z-10'>
+      <Note className='absolute top-[8px] left-[8px] z-10 bg-[#'>
         <NoteHeader title="clarence.lubrin" />
         <NoteItem text="I like to create programs that are" />
         <NoteItem text="useful and beautiful." />
