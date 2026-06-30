@@ -37,13 +37,13 @@
   font-weight: 400;
   line-height: normal;
 }
+
 .folder-image-container {
-  display: flex;
-  padding: 16px;
+  display: grid;
+  grid-template-areas: "overlay";
   flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  align-self: stretch;
+  align-items: center;
+  justify-content: center;
 
   /* Style */
   border-radius: 0px 16px 16px 16px;
@@ -53,11 +53,14 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
 .folder-image-container img {
+  grid-area: overlay;
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
+
 .folder-image-overlay {
   position: absolute;
   top: 0;

@@ -98,7 +98,7 @@ export function Folder({
         pos.current.pos3 = touch.clientX;
         pos.current.pos4 = touch.clientY;
         setPosition(prev => ({
-            x: Math.max(0, Math.min(window.innerWidth - 500, prev.x - pos.current.pos1)),
+            x: Math.max(0, Math.min(window.innerWidth - 200, prev.x - pos.current.pos1)),
             y: Math.max(0, Math.min(window.innerHeight - 200, prev.y - pos.current.pos2)),
         }));
     };
@@ -131,7 +131,7 @@ export function Folder({
             <div className="folder-title-container">
                 <p>{title}</p>
             </div>
-            <div className="folder-image-container"
+            <div className="folder-image-container p-3 xs:p-4"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >                
@@ -149,18 +149,12 @@ export function Folder({
                             y: { type: 'spring', stiffness: 300, damping: 20, mass: 0.8 },
                         }}
                         style={{
-                            position: 'absolute',
-                            width: 'calc(100% - 32px)',
                             filter: isHovered ? 'none' : 'blur(2px)',
-                            // background: isClicked ? 'rgba(217, 120, 51, 0.25)' : '',
                             boxShadow: isClicked ? '0px 0px 16px 0px rgba(0, 0, 0, 0.25)' : 'none',
                             transition: 'filter 0.3s ease-in-out, box-shadow 0.5s ease-in-out',
                         }}
                     />
                 ))}
-                {/* Serve as a container */}
-                <img key={image[0]} src={image[0]} alt={title} style={{opacity: 0}}/> 
-                
             </div>
         </motion.button>
     );
