@@ -131,7 +131,7 @@ export function Folder({
             <div className="folder-title-container">
                 <p>{title}</p>
             </div>
-            <div className="folder-image-container p-3 xs:p-4"
+            <div className="folder-image-container p-2 xs:p-3 sm:p-4"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >                
